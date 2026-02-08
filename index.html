@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Memoria de Body</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Página de verificación -->
+    <div id="verification-page" class="page active">
+        <div class="verification-container">
+            <div class="memorial-header">
+                <div class="cross">✟</div>
+                <h1 class="fade-in">En Recuerdo de Body</h1>
+                <p class="subtitle">Peabody Cuaresma Salhuana</p>
+                <div class="ribbon">🎗️</div>
+            </div>
+
+            <div class="verification-content">
+                <p class="instruction">Para acceder al memorial, por favor responde las siguientes preguntas:</p>
+
+                <div id="questions-container">
+                    <!-- Las preguntas se generarán dinámicamente en orden aleatorio -->
+                </div>
+
+                <div id="error-message" class="error-message"></div>
+                <div id="lockout-message" class="lockout-message"></div>
+
+                <button id="verify-btn" class="verify-btn">Ingresar al Memorial</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página principal del memorial -->
+    <div id="memorial-page" class="page">
+        <div class="memorial-main">
+            <header class="main-header">
+                <div class="header-decoration">
+                    <span class="cross-symbol">✟</span>
+                    <h1 class="main-title">Peabody Cuaresma Salhuana</h1>
+                    <span class="cross-symbol">✟</span>
+                </div>
+                <p class="life-dates">26 de Noviembre 2023 - 08 de Febrero 2026</p>
+                <p class="nickname">"Body"</p>
+            </header>
+
+            <section class="comunicado-section">
+                <div class="comunicado-container">
+                    <img src="comunicado.png" alt="Comunicado de despedida" class="comunicado-img">
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                <h2 class="section-title">Galería de Recuerdos</h2>
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="fotos/1.jpeg" alt="Body - Foto 1">
+                        <div class="photo-caption">
+                            <p>Desde pequeño te di frutas, siempre te encantaban 🍎</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/2.jpeg" alt="Body - Foto 2">
+                        <div class="photo-caption">
+                            <p>Tu comida favorita era el hígado, lo disfrutabas tanto 🍖</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/3.jpeg" alt="Body - Foto 3">
+                        <div class="photo-caption">
+                            <p>Odiabas el fideo corto, nunca lo quisiste comer 🍝</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/4.jpeg" alt="Body - Foto 4">
+                        <div class="photo-caption">
+                            <p>Para bañarte tuvimos que echarte hasta champú de humano 🛁</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/5.jpeg" alt="Body - Foto 5">
+                        <div class="photo-caption">
+                            <p>Todos los días te daba cariño... y ya no lo haré 💔</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/6.jpeg" alt="Body - Foto 6">
+                        <div class="photo-caption">
+                            <p>Eras mi compañero fiel, siempre a mi lado 🐾</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/7.jpeg" alt="Body - Foto 7">
+                        <div class="photo-caption">
+                            <p>Tu mirada siempre me alegraba el día ✨</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="fotos/8.jpeg" alt="Body - Foto 8">
+                        <div class="photo-caption">
+                            <p>Fuiste y siempre serás mi único hijo perruño 🌟</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="encontrado-section">
+                <h2 class="section-title">El Último Adiós</h2>
+                <div class="encontrado-container">
+                    <div class="encontrado-text-intro">
+                        <p class="encontrado-intro">Ese día, mi mundo se detuvo...</p>
+                    </div>
+
+                    <img src="encontrado.jpeg" alt="Donde fue encontrado" class="encontrado-img">
+
+                    <div class="encontrado-text">
+                        <p class="encontrado-time">📍 Encontrado a las 10:00 AM - 08 de Febrero 2026</p>
+
+                        <div class="encontrado-emotions">
+                            <p class="emotion-text">
+                                💔 Me sentí con un corazón destruido
+                            </p>
+                            <p class="emotion-text">
+                                🕊️ Mi alma se partió en mil pedazos
+                            </p>
+                            <p class="emotion-text">
+                                😢 El dolor más profundo que he sentido
+                            </p>
+                            <p class="emotion-text">
+                                🌙 Ese momento cambió mi vida para siempre
+                            </p>
+                        </div>
+
+                        <div class="encontrado-final">
+                            <p>A las 10 de la mañana, encontré a mi compañero sin vida.</p>
+                            <p>El mundo perdió su color, mi corazón se hizo pedazos.</p>
+                            <p>Nada volvería a ser igual sin ti, Body.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promise-section">
+                <div class="promise-container">
+                    <h2 class="promise-title">Mi Promesa Eterna</h2>
+                    <div class="promise-content">
+                        <p class="promise-text">
+                            "No adoptaré más animales por el resto de mi vida.<br>
+                            Es una promesa que le hice... y la cumpliré."
+                        </p>
+                        <p class="promise-signature">- Tu padre, que siempre te recordará</p>
+                    </div>
+                    <div class="heart">💔</div>
+                </div>
+            </section>
+
+            <footer class="memorial-footer">
+                <p>Descansa en paz, Body. Siempre vivirás en nuestros corazones.</p>
+                <p class="footer-date">🕊️ 26-11-2023 † 08-02-2026 🕊️</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
