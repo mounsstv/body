@@ -1,3 +1,119 @@
+// =============================================
+// CONTADOR DE TIEMPO TRANSCURRIDO
+// Fecha de inicio: 08 de Febrero 2026, 10:00 AM hora peruana (UTC-5)
+// =============================================
+const BODY_START_DATE = new Date('2026-02-08T10:00:00-05:00');
+
+function updateElapsedCounter() {
+    const now = new Date();
+    const diffMs = now - BODY_START_DATE;
+
+    if (diffMs < 0) return; // Aún no ha pasado la fecha
+
+    const totalSeconds = Math.floor(diffMs / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours = Math.floor(totalMinutes / 60);
+    const totalDays = Math.floor(totalHours / 24);
+
+    // Calcular años completos
+    const years = Math.floor(totalDays / 365);
+    const remainingDaysAfterYears = totalDays - (years * 365);
+
+    // Valores restantes para display
+    const displayDays = remainingDaysAfterYears;
+    const displayHours = totalHours % 24;
+    const displayMinutes = totalMinutes % 60;
+    const displaySeconds = totalSeconds % 60;
+
+    // Actualizar DOM
+    const yearsContainer = document.getElementById('counter-years-container');
+    const yearsEl = document.getElementById('counter-years');
+    const daysEl = document.getElementById('counter-days');
+    const hoursEl = document.getElementById('counter-hours');
+    const minutesEl = document.getElementById('counter-minutes');
+    const secondsEl = document.getElementById('counter-seconds');
+    const totalHoursEl = document.getElementById('counter-total-hours');
+
+    if (yearsContainer && yearsEl) {
+        if (years > 0) {
+            yearsContainer.style.display = 'flex';
+            yearsEl.textContent = years;
+        } else {
+            yearsContainer.style.display = 'none';
+        }
+    }
+
+    if (daysEl) daysEl.textContent = displayDays;
+    if (hoursEl) hoursEl.textContent = displayHours;
+    if (minutesEl) minutesEl.textContent = displayMinutes;
+    if (secondsEl) secondsEl.textContent = displaySeconds;
+    if (totalHoursEl) totalHoursEl.textContent = totalHours.toLocaleString();
+}
+
+// Actualizar cada segundo
+updateElapsedCounter();
+setInterval(updateElapsedCounter, 1000);
+
+// =============================================
+// FRASES DIARIAS PARA RECORDAR A BODY
+// =============================================
+const DAILY_PHRASES = [
+    "Tu ladrido vive en el eco de mi silencio.",
+    "Fuiste el color más bonito de mis días.",
+    "Corres libre en los campos del cielo, pero habitas siempre en mi alma.",
+    "Gracias por enseñarme lo que es el amor incondicional.",
+    "Tus huellas quedaron marcadas en la tierra, pero más en mi corazón.",
+    "No hay día que pase sin que una parte de mi te busque.",
+    "Fuiste mi mejor decisión y mi más triste despedida.",
+    "Un ángel de cuatro patas me cuida desde arriba.",
+    "Te extraño más de lo que las palabras pueden explicar.",
+    "Cada estrella en el cielo es un reflejo de tu luz.",
+    "Nadie podrá llenar el vacío que dejaste en el sofá y en mi vida.",
+    "Tu recuerdo es mi refugio favorito.",
+    "Fuiste pequeño en tamaño, pero gigante en amor.",
+    "Nos volveremos a ver en el puente del arcoíris.",
+    "Tu lealtad fue el regalo más puro que la vida me dio.",
+    "Amo el silencio porque ahí es donde puedo escucharte.",
+    "Vivirás por siempre en cada anécdota y en cada suspiro.",
+    "El cielo es un lugar más alegre porque tú estás ahí.",
+    "Fuiste la compañía perfecta en mis momentos más oscuros.",
+    "Aunque no te vea, siento tu presencia en cada rincón.",
+    "Me enseñaste a vivir el presente con alegría.",
+    "Tu mirada pura es algo que nunca olvidaré.",
+    "Eres el motivo de mis lágrimas, pero también de mis mejores sonrisas.",
+    "Gracias por ser mi hijo perruño y mi fiel compañero.",
+    "El dolor de perderte es el precio de haberte amado tanto.",
+    "Cada vez que veo una mariposa, pienso que vienes a saludarme.",
+    "Tu ausencia es abrumadora, pero tu legado de amor es eterno.",
+    "Fuiste mi sombra fiel y ahora eres mi luz eterna.",
+    "El mundo es un poco más gris sin tu alegría.",
+    "Te amo hoy, mañana y hasta que mi corazón deje de latir."
+];
+
+function updateDailyPhrase() {
+    const now = new Date();
+    // Usamos el día del año para rotar las frases
+    const startOfYear = new Date(now.getFullYear(), 0, 0);
+    const diff = now - startOfYear;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    // Elegimos la frase según el día (cicla cada 30 días)
+    const phraseIndex = dayOfYear % DAILY_PHRASES.length;
+    const phrase = DAILY_PHRASES[phraseIndex];
+
+    const phraseTextEl = document.getElementById('daily-phrase-text');
+    const phraseDayEl = document.getElementById('daily-phrase-day');
+
+    if (phraseTextEl && phraseDayEl) {
+        phraseDayEl.textContent = `Recorrido de hoy - Día ${dayOfYear}`;
+        phraseTextEl.textContent = phrase;
+    }
+}
+
+// Inicializar frase diaria
+updateDailyPhrase();
+
 // Definición de preguntas con opciones
 const QUESTIONS = [
     {

@@ -20,6 +20,44 @@
             </div>
 
             <div class="verification-content">
+                <!-- Contador de tiempo transcurrido -->
+                <div id="elapsed-counter" class="elapsed-counter">
+                    <p class="counter-label">⏳ Tiempo desde que Body nos dejó</p>
+                    <p class="counter-sublabel">08 de Febrero 2026 · 10:00 AM</p>
+                    <div class="counter-display">
+                        <div class="counter-item" id="counter-years-container" style="display:none;">
+                            <span class="counter-value" id="counter-years">0</span>
+                            <span class="counter-unit">Años</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" id="counter-days">0</span>
+                            <span class="counter-unit">Días</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" id="counter-hours">0</span>
+                            <span class="counter-unit">Horas</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" id="counter-minutes">0</span>
+                            <span class="counter-unit">Minutos</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" id="counter-seconds">0</span>
+                            <span class="counter-unit">Segundos</span>
+                        </div>
+                    </div>
+                    <div class="counter-total-hours">
+                        🕐 Total acumulado: <span id="counter-total-hours">0</span> horas
+                    </div>
+                </div>
+
+                <!-- Frase diaria para recordar a Body -->
+                <div class="daily-phrase">
+                    <p class="daily-phrase-day" id="daily-phrase-day"></p>
+                    <p class="daily-phrase-text" id="daily-phrase-text"></p>
+                    <span class="daily-phrase-paw">🐾</span>
+                </div>
+
                 <p class="instruction">Para acceder al memorial, por favor responde las siguientes preguntas:</p>
 
                 <div id="questions-container">

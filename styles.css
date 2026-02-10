@@ -269,6 +269,181 @@ body::before {
     margin-top: 35px;
 }
 
+/* Contador de tiempo transcurrido */
+.elapsed-counter {
+    text-align: center;
+    padding: 30px 25px;
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, rgba(74, 63, 92, 0.3), rgba(44, 62, 80, 0.3));
+    border-radius: 20px;
+    border: 2px solid rgba(212, 175, 55, 0.25);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: counterGlow 4s ease-in-out infinite;
+}
+
+@keyframes counterGlow {
+
+    0%,
+    100% {
+        border-color: rgba(212, 175, 55, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    50% {
+        border-color: rgba(212, 175, 55, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+}
+
+.counter-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-gold-light);
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.counter-sublabel {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.counter-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 75px;
+    padding: 15px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: all 0.3s ease;
+}
+
+.counter-item:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.counter-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.counter-unit {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.counter-total-hours {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--accent-silver);
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid rgba(192, 192, 192, 0.15);
+}
+
+.counter-total-hours span {
+    font-weight: 700;
+    color: var(--accent-gold-light);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .counter-display {
+        gap: 10px;
+    }
+
+    .counter-item {
+        min-width: 60px;
+        padding: 10px 8px;
+    }
+
+    .counter-value {
+        font-size: 1.5rem;
+    }
+
+    .counter-label {
+        font-size: 1.1rem;
+    }
+}
+
+/* Frase Diaria */
+.daily-phrase {
+    background: rgba(45, 45, 45, 0.4);
+    border: 1px dashed rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 35px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-phrase::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+    color: rgba(212, 175, 55, 0.1);
+}
+
+.daily-phrase-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.daily-phrase-text {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.daily-phrase-paw {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    display: block;
+}
+
 .instruction {
     text-align: center;
     font-size: 1.15rem;
